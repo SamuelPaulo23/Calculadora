@@ -9,12 +9,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
+
 namespace Calculadora
 {
     public partial class Form1 : Form
     {
-        decimal valor1 = 0;
-        decimal valor2 = 0;
+        double valor1 = 0;
+        double valor2 = 0;
         string operacao = "";
 
         public Form1()
@@ -22,7 +25,9 @@ namespace Calculadora
             InitializeComponent();
         }
 
-       
+
+
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -34,7 +39,7 @@ namespace Calculadora
 
         }
 
-       
+
 
         private void button7_Click(object sender, EventArgs e)
         {
@@ -90,28 +95,84 @@ namespace Calculadora
         {
             textBox1.Text = textBox1.Text + "00";
         }
-        //método para mostra o resultado da conta com o button "="
+
+
+
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            valor1 = double.Parse(textBox1.Text, CultureInfo.InvariantCulture);
+            textBox1.Text = "-";
+            operacao = "SUBTRACAO";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            valor1 = double.Parse(textBox1.Text, CultureInfo.InvariantCulture);
+            textBox1.Text = "+";
+            operacao = "SOMA";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            valor1 = double.Parse(textBox1.Text, CultureInfo.InvariantCulture);
+            textBox1.Text = "x";
+            operacao = "MULTIPLICACAO";
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            valor1 = double.Parse(textBox1.Text, CultureInfo.InvariantCulture);
+            textBox1.Text = "/";
+            operacao = "DIVISAO";
+        }
+
+
         private void button1_Click(object sender, EventArgs e)
         {
-            //valor2 = decimal.Parse(textBox1.Text, CultureInfo.InvariantCulture);
-            if (operacao == "SOMA")
-            {
-                textBox1.Text = Convert.ToString(valor1 + "+" + valor2);
-            }
-                
+
+                valor2 = double.Parse(textBox1.Text, CultureInfo.InvariantCulture);
+
             if (operacao == "SOMA")
             {
                 textBox1.Text = Convert.ToString(valor1 + valor2);
             }
-        }
 
-        //método para operação da soma
-        private void button2_Click(object sender, EventArgs e)
-        {
-            valor1 = decimal.Parse(textBox1.Text, CultureInfo.InvariantCulture);
-            textBox1.Text = Convert.ToString(valor1 + "+" );
-            valor2 = decimal.Parse(textBox1.Text, CultureInfo.InvariantCulture);
-            operacao = "SOMA";
-        }8
+            else if (operacao == "SUBTRACAO")
+            {
+                textBox1.Text = Convert.ToString(valor1 - valor2);
+            }
+
+            else if (operacao == "MULTIPLICACAO")
+            {
+                textBox1.Text = Convert.ToString(valor1 * valor2);
+            }
+
+            else if (operacao == "DIVISAO")
+            {
+                textBox1.Text = Convert.ToString(valor1 / valor2);
+            }
+
+
+
+            /*if (operacao == "SUBTRACAO")
+            {
+                textBox1.Text = Convert.ToString(valor1 - valor2);
+            }
+
+            if (operacao == "MULTIPLICACAO")
+            {
+                textBox1.Text = Convert.ToString(valor1 * valor2);
+            }
+
+            if (operacao == "DIVISAO")
+            {
+                textBox1.Text = Convert.ToString(valor1 / valor2);
+            }*/
+        }
     }
 }
+
+        
+    
+
