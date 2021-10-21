@@ -35,10 +35,6 @@ namespace Calculadora
 
         }*/
 
-
-
-
-
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -48,8 +44,6 @@ namespace Calculadora
         {
 
         }
-
-
 
         private void button7_Click(object sender, EventArgs e)
         {
@@ -111,7 +105,10 @@ namespace Calculadora
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            if(valor1 == 0)
+            {
+                valor1 = decimal.Parse(textBox1.Text, CultureInfo.InvariantCulture);
+            }
             valor1 = decimal.Parse(textBox1.Text, CultureInfo.InvariantCulture);
             //ConservadorDeNumeros(valor1);
             textBox1.Text = "";
@@ -121,6 +118,10 @@ namespace Calculadora
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (valor1 == 0)
+            {
+                valor1 = decimal.Parse(textBox1.Text, CultureInfo.InvariantCulture);
+            }
             valor1 = decimal.Parse(textBox1.Text, CultureInfo.InvariantCulture);
             //ConservadorDeNumeros(valor1);
             textBox1.Text = "";
@@ -130,6 +131,10 @@ namespace Calculadora
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (valor1 == 0)
+            {
+                valor1 = decimal.Parse(textBox1.Text, CultureInfo.InvariantCulture);
+            }
             valor1 = decimal.Parse(textBox1.Text, CultureInfo.InvariantCulture);
             textBox1.Text = "";
             operacao = "MULTIPLICACAO";
@@ -138,6 +143,10 @@ namespace Calculadora
 
         private void button4_Click(object sender, EventArgs e)
         {
+            if (valor1 == 0)
+            {
+                valor1 = decimal.Parse(textBox1.Text, CultureInfo.InvariantCulture);
+            }
             valor1 = decimal.Parse(textBox1.Text, CultureInfo.InvariantCulture);
             textBox1.Text = "";
             operacao = "DIVISAO";
@@ -183,12 +192,13 @@ namespace Calculadora
 
         private void button6_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "0";
-            label1.Text = "";
+            
             if (valor1 != 0)
             {
                 textBox1.Text = Convert.ToString(valor1);
             }
+            textBox1.Text = "0";
+            label1.Text = "";
         }
     }
 }
