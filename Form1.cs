@@ -109,7 +109,10 @@ namespace Calculadora
             {
                 valor1 = decimal.Parse(textBox1.Text, CultureInfo.InvariantCulture);
             }
+<<<<<<< HEAD
             valor1 = decimal.Parse(textBox1.Text, CultureInfo.InvariantCulture);
+=======
+>>>>>>> 4cd940789d53ca097f73907b73f227fac2eef6ba
             //ConservadorDeNumeros(valor1);
             textBox1.Text = "";
             operacao = "SUBTRACAO";
