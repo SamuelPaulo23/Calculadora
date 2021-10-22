@@ -109,10 +109,8 @@ namespace Calculadora
             {
                 valor1 = decimal.Parse(textBox1.Text, CultureInfo.InvariantCulture);
             }
-<<<<<<< HEAD
             valor1 = decimal.Parse(textBox1.Text, CultureInfo.InvariantCulture);
-=======
->>>>>>> 4cd940789d53ca097f73907b73f227fac2eef6ba
+
             //ConservadorDeNumeros(valor1);
             textBox1.Text = "";
             operacao = "SUBTRACAO";
@@ -187,10 +185,6 @@ namespace Calculadora
                 label1.Text = "";
                 textBox1.Text = Convert.ToString(valor1 / valor2);
             }
-
-
-
-           
         }
 
         private void button6_Click(object sender, EventArgs e)
