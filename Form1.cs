@@ -17,23 +17,18 @@ namespace Calculadora
 {
     public partial class Form1 : Form
     {
-        //ArrayList valor  = new ArrayList();
-        // ArrayList sinal = new ArrayList();
-        decimal valor1 = 0;
-        decimal valor2 = 0;
+
+        double valor1 = 0;
+        double valor2 = 0;
+        double result = 0;
         string operacao = "";
 
+        
 
         public Form1()
         {
             InitializeComponent();
         }
-
-        /*public void ConservadorDeNumeros(decimal valor1)
-        {
-            valor.Add(valor);
-
-        }*/
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -93,6 +88,7 @@ namespace Calculadora
         private void button16_Click(object sender, EventArgs e)
         {
             textBox1.Text = textBox1.Text + "0";
+            
         }
 
         private void button17_Click(object sender, EventArgs e)
@@ -105,11 +101,14 @@ namespace Calculadora
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if(valor1 == 0)
+            if (valor1 != 0)
             {
-                valor1 = decimal.Parse(textBox1.Text, CultureInfo.InvariantCulture);
+                valor1 = double.Parse(textBox1.Text/*, CultureInfo.InvariantCulture*/);
             }
-            valor1 = decimal.Parse(textBox1.Text, CultureInfo.InvariantCulture);
+            else if (valor1 == 0)
+            {
+                valor1 = double.Parse(textBox1.Text, CultureInfo.InvariantCulture);
+            }
 
             //ConservadorDeNumeros(valor1);
             textBox1.Text = "";
@@ -119,11 +118,15 @@ namespace Calculadora
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (valor1 == 0)
+            if (valor1 != 0)
             {
-                valor1 = decimal.Parse(textBox1.Text, CultureInfo.InvariantCulture);
+                valor1 = double.Parse(textBox1.Text/*, CultureInfo.InvariantCulture*/);
             }
-            valor1 = decimal.Parse(textBox1.Text, CultureInfo.InvariantCulture);
+            else if (valor1 == 0)
+            {
+                valor1 = double.Parse(textBox1.Text, CultureInfo.InvariantCulture);
+            }
+            
             //ConservadorDeNumeros(valor1);
             textBox1.Text = "";
             operacao = "SOMA";
@@ -132,11 +135,14 @@ namespace Calculadora
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (valor1 == 0)
+            if (valor1 != 0)
             {
-                valor1 = decimal.Parse(textBox1.Text, CultureInfo.InvariantCulture);
+                valor1 = double.Parse(textBox1.Text/*, CultureInfo.InvariantCulture*/);
             }
-            valor1 = decimal.Parse(textBox1.Text, CultureInfo.InvariantCulture);
+            else if (valor1 == 0)
+            {
+                valor1 = double.Parse(textBox1.Text, CultureInfo.InvariantCulture);
+            }
             textBox1.Text = "";
             operacao = "MULTIPLICACAO";
             label1.Text = "X";
@@ -144,11 +150,14 @@ namespace Calculadora
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (valor1 == 0)
+            if (valor1 != 0)
             {
-                valor1 = decimal.Parse(textBox1.Text, CultureInfo.InvariantCulture);
+                valor1 = double.Parse(textBox1.Text/*, CultureInfo.InvariantCulture*/);
             }
-            valor1 = decimal.Parse(textBox1.Text, CultureInfo.InvariantCulture);
+            else if (valor1 == 0)
+            {
+                valor1 = double.Parse(textBox1.Text, CultureInfo.InvariantCulture);
+            }
             textBox1.Text = "";
             operacao = "DIVISAO";
             label1.Text = "/";
@@ -157,33 +166,48 @@ namespace Calculadora
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-                valor2 = decimal.Parse(textBox1.Text, CultureInfo.InvariantCulture);
-                //ConservadorDeNumeros(valor2);
+            
+            valor2 = double.Parse(textBox1.Text,CultureInfo.InvariantCulture);
+                
 
             if (operacao == "SOMA")
             {
                 label1.Text = "";
                 textBox1.Text = Convert.ToString(valor1 + valor2);
-                
+                result = double.Parse(textBox1.Text/*, CultureInfo.InvariantCulture*/);
+                valor1 = 0;
+                valor2 = 0;
+                valor1 = result;
             }
 
             else if (operacao == "SUBTRACAO")
             {
                 label1.Text = "";
                 textBox1.Text = Convert.ToString(valor1 - valor2);
+                result = double.Parse(textBox1.Text/*, CultureInfo.InvariantCulture*/);
+                valor1 = 0;
+                valor2 = 0;
+                valor1 = result;
             }
 
             else if (operacao == "MULTIPLICACAO")
             {
                 label1.Text = "";
                 textBox1.Text = Convert.ToString(valor1 * valor2);
+                result = double.Parse(textBox1.Text/*, CultureInfo.InvariantCulture*/);
+                valor1 = 0;
+                valor2 = 0;
+                valor1 = result; 
             }
 
             else if (operacao == "DIVISAO")
             {
                 label1.Text = "";
                 textBox1.Text = Convert.ToString(valor1 / valor2);
+                result = double.Parse(textBox1.Text/*, CultureInfo.InvariantCulture*/);
+                valor1 = 0;
+                valor2 = 0;
+                valor1 = result;
             }
         }
 
